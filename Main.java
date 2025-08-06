@@ -104,34 +104,5 @@ public class Main {
         Car newCar = new Car("Red","Mustang",1994);
     	newCar.startEngine();
 
-
-        //Create an 1D Array of Suits & Cards
-        String[] suits = {"Diamonds", "Hearts", "Spades", "Clubs"};
-        String[] cards = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K"};
-        for (String s : suits){
-            for (String c : cards){
-                System.out.print(c + " of " + s + ", ");
-            }
-            System.out.println();
-        }
-
-        //Create an 2D Array of Suits & Cards
-        String[][] deck = new String[suits.length][cards.length];
-
-        for (int i = 0; i < suits.length; i++) {
-            for (int k = 0; k < cards.length; k++) {
-                deck[i][k] =  cards[k] + " of " +  suits[i];
-            }
-        }
-        // Print the deck (optional)
-        for (int i = 0; i < suits.length; i++) {
-            for (int k = 0; k < cards.length; k++) {
-                System.out.print(deck[i][k] + ", ");
-            }
-            System.out.println();
-        }
-
-
-
     }
 }
