@@ -21,7 +21,11 @@ public class Main {
         System.out.println("New String1: " + newS1);		 
 
         String newS2 = myMessage.toUpperCase(); 
-        System.out.println("New String2: " + newS2);		 
+        System.out.println("New String2: " + newS2);	
+        
+        char1 = myMessage.charAt(7);
+        char1 = Character.toUpperCase(char1);  			 
+        System.out.println("Char1: " + char1);
 
         //Reading Strings from Console
         Scanner input = new Scanner(System.in);
