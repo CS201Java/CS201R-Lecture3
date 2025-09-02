@@ -60,9 +60,9 @@ public class Main {
         System.out.println("str1.equals(str3): " + (str1.equals(str3))); 
         System.out.println("Identity Hash Code: str1: " + System.identityHashCode(str1));
         System.out.println("Identity Hash Code: str2: " + System.identityHashCode(str2));   
-        System.out.println("Identity Hash Code: str3: " + System.identityHashCode(str1));
-        System.out.println("Identity Hash Code: str4: " + System.identityHashCode(str2));   
-        
+        System.out.println("Identity Hash Code: str3: " + System.identityHashCode(str3));
+        System.out.println("Identity Hash Code: str4: " + System.identityHashCode(str4));   
+
         String s5 = new String ("This is It");
         String s6 = "This is It";
         String s7 = "THIS IS IT";
