@@ -2,12 +2,12 @@ import java.io.IOException;
 import java.util.*;
 import java.io.PrintWriter;
 import java.io.File;
-import static java.lang.Math.pow;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
 
+         System.out.println("\n\nDEMONSTRATION OF VARIOUS STRING COMMANDS");  
         //Basic String Methods
         String myMessage = "CS201 is Great!";
 
@@ -27,6 +27,7 @@ public class Main {
         char1 = Character.toUpperCase(char1);  			 
         System.out.println("Char1: " + char1);
 
+        System.out.println("\n\nDEMONSTRATION OF SCANNER NEXT AND NEXTLINE");  
         //Reading Strings from Console
         Scanner input = new Scanner(System.in);
         System.out.print("Enter three words separated by spaces: ");
@@ -40,14 +41,14 @@ public class Main {
         System.out.println("s2 is " + s2);
         System.out.println("s3 is " + s3);
 
-        input.nextLine();
+        input.nextLine();   //why is this here???
         System.out.print("Enter three words separated by spaces: ");   
         String s4 = input.nextLine();  
-
         System.out.println("s4 is " + s4);
 
         input.close();
 
+        System.out.println("\n\nDEMONSTRATION OF STRING POOL");  
         //Checking the String Pool
         String str1 = "hello";
         String str2 = "hello";
@@ -57,7 +58,11 @@ public class Main {
         System.out.println("str1 == str3:      " + (str1 == str3)); 
         System.out.println("str3 == str4:      " + (str3 == str4)); 
         System.out.println("str1.equals(str3): " + (str1.equals(str3))); 
-
+        System.out.println("Identity Hash Code: str1: " + System.identityHashCode(str1));
+        System.out.println("Identity Hash Code: str2: " + System.identityHashCode(str2));   
+        System.out.println("Identity Hash Code: str3: " + System.identityHashCode(str1));
+        System.out.println("Identity Hash Code: str4: " + System.identityHashCode(str2));   
+        
         String s5 = new String ("This is It");
         String s6 = "This is It";
         String s7 = "THIS IS IT";
@@ -66,15 +71,21 @@ public class Main {
 
 
         //Substrings
-
+        System.out.println("\n\nDEMONSTRATION OF SUBSTRINGS"); 
         String str8 = "Welcome to Java";
+        System.out.println("Identity Hash Code: str8: " + System.identityHashCode(str8));
         System.out.println(str8.substring(3));  
         System.out.println(str8.substring(4, 5));  
         System.out.println(str8.substring(4, 7));  
+        System.out.println("Identity Hash Code: str8: " + System.identityHashCode(str8));
 
+        System.out.println("\n\nDEMONSTRATION OF MUTABILITY?"); 
+        str8 = str8.substring(3, 9);
+        System.out.println(str8);  
+        System.out.println("Identity Hash Code: str8: " + System.identityHashCode(str8));
 
         //Reading & Writing to files
-
+        System.out.println("\n\nDEMONSTRATION OF READING & WRITING TO FILES"); 
         //PrintWriter is a class to work with formatted output
         PrintWriter outFile = new PrintWriter("output.txt");
 
@@ -82,6 +93,7 @@ public class Main {
         File inFileName = new File("input.txt");
         Scanner inFile = new Scanner(inFileName);
 
+        System.out.println("\n\nDEMONSTRATION OF AN ARRAYLIST OF STRINGS"); 
         //read 5 input records and add the words to an arraylist
         ArrayList<String>words = new ArrayList<>();
 
@@ -102,6 +114,7 @@ public class Main {
         inFile.close();
         outFile.close();
 
+        System.out.println("\n\nDEMONSTRATION OF JAVA CLASS CAR"); 
         //A bit about Java Classes
         //create an object:
 		
