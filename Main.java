@@ -1,11 +1,44 @@
-import java.io.IOException;
-import java.util.*;
-import java.io.PrintWriter;
 import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
+
+        System.out.println("\n\nDEMONSTRATION OF ORDER OF OPERATIONS");  
+        System.out.println("true || false && false     =  " + (true || false && false));
+        System.out.println("true && false || false     =  " + (true && false || false));
+        System.out.println("4 + 3 > 2 && 4 - 2 > 5     =  " + (4 + 3 > 2 && 4 - 2 > 5));
+        System.out.println("2 * 2 - 3 > 2 || 4 + 2 > 5 =  " + (2 * 2 - 3 > 2 || 4 + 2 > 5));
+
+        int x = 0, y = 10, z = 10;
+        System.out.println("1a)  x == 0 && x != 10     =  " + (x == 0 && x != 10 )); 
+        x = 5;      
+        System.out.println("1b)  x == 0 && x != 10     =  " + (x == 0 && x != 10 ));
+        x = 0;
+        System.out.println("2a)  x == 5 || y == 10 && z != 10     =  " + (x == 5 || y == 10 && z != 10 ));   
+        x = 5;
+        y = 0;
+        z = 0;
+        System.out.println("2b)  x == 5 || y == 10 && z != 10     =  " + (x == 5 || y == 10 && z != 10 )); 
+
+        boolean a = true, b = false, c = false, d = false;
+        System.out.println("3)  a && b == c && d      = " + (a && b == c && d));        
+        System.out.println("vs  (a && b) == (c && d)  = " + ((a && b) == (c && d)));    
+        
+        System.out.println("\n\nDEMONSTRATION OF FLOATING POINT EQUALITY");
+        final double EPSILON = 1E-14;
+        double f = 5.4, g = 5.3;
+        System.out.println("  f == g + .1  = " + (f == g + 0.1));           
+        System.out.println("  f == g + .1  = " + (Math.abs(f - (g + 0.1)) < EPSILON));   
+        
+        double h = 1.0 - 0.1 - 0.1 - 0.1 - 0.1 - 0.1;
+        System.out.println(h == 0.5); 
+        if (Math.abs(x - 0.5) < EPSILON)
+            System.out.println(x + " is approximately 0.5");
+
 
          System.out.println("\n\nDEMONSTRATION OF VARIOUS STRING COMMANDS");  
         //Basic String Methods
@@ -84,8 +117,22 @@ public class Main {
         System.out.println(str8);  
         System.out.println("Identity Hash Code: str8: " + System.identityHashCode(str8));
 
+
+        //Checking for Binary Values
+        System.out.print("\n\nDEMONSTRATION OF VERIFYING INPUT (BINARY)"); 
+        System.out.println(" & DEMONSTRATION OF AN ARRAYLIST OF STRINGS"); 
+        ArrayList<String> binList = new ArrayList<>(Arrays.asList("0101", "abc", "000", "1111"));
+        for (String bin: binList){
+            if (!isBinary(bin))
+                System.out.println(bin + " is not a binary value");
+            else
+                System.out.println(bin + " is a binary value");
+        }
+
+
         //Reading & Writing to files
         System.out.println("\n\nDEMONSTRATION OF READING & WRITING TO FILES"); 
+
         //PrintWriter is a class to work with formatted output
         PrintWriter outFile = new PrintWriter("output.txt");
 
@@ -93,7 +140,6 @@ public class Main {
         File inFileName = new File("input.txt");
         Scanner inFile = new Scanner(inFileName);
 
-        System.out.println("\n\nDEMONSTRATION OF AN ARRAYLIST OF STRINGS"); 
         //read 5 input records and add the words to an arraylist
         ArrayList<String>words = new ArrayList<>();
 
@@ -122,4 +168,14 @@ public class Main {
     	newCar.startEngine();
 
     }
+
+    //Validate that the string only contains 0s and 1s.  
+    //PRE: accepts a string
+    //POST: if string only contains 0s & 1s – return true; else return false
+       
+    public static boolean isBinary(String str){
+        System.out.println("   ***isBinary needs to be written***");
+        return false;
+    }
+
 }
